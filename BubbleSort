@@ -1,0 +1,30 @@
+public class InputArea {
+// Time complex=> o(1), space complex=> best case=o(n), worst case=0(n^2)
+	public static void main(String[] args) {
+		int [] in= {5,8,4,3,7,6,2,9,5};
+		System.out.println("Before change :");
+		System.out.println(Arrays.toString(in));
+		Sort.BubbleSort(in);
+		System.out.println("After change :");
+		System.out.println(Arrays.toString(in));
+		
+	}
+  public static void BubbleSort(int arr[])
+	{
+		
+		for(int i=1; i<arr.length; i++)
+		{
+			for(int j=0; j<arr.length-i; j++)
+			{
+				if(arr[j]>arr[j+1])
+				{
+					int temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+		
+	}
+
+}

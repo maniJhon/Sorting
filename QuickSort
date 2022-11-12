@@ -1,0 +1,42 @@
+package sortConcept;
+
+import java.util.Arrays;
+
+public class QuickSort {
+	public static void main(String[] args) {
+		int [] in= {5,8,4,3,7,6,2,9,5};
+		int low=0,high=in.length-1;
+		sort(in,low,high);
+		System.out.println(Arrays.toString(in));
+		
+	}
+
+	private static void sort(int[] arr, int low, int high) {
+		// TODO Auto-generated method stub
+		if(low>=high)
+			return;
+		int start=low;
+		int end=high;
+		int mid=(start+end)/2;
+		int pivot=arr[mid];
+		
+		while(start<=end)
+		{
+			while(arr[start]<pivot)
+				start++;
+			while(arr[end]>pivot)
+				end--;
+			if(start<=end)
+			{
+				int temp=arr[start];
+				arr[start]=arr[end];
+				arr[end]=temp;
+				start++;
+				end--;
+			}
+		}
+		sort(arr,low,end);
+		sort(arr,start,high);
+	}
+
+}
